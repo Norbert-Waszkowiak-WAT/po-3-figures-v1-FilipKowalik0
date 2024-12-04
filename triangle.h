@@ -1,3 +1,5 @@
+#ifndef PO_LAB3_FIGURES_TRIANGLE_H
+#define PO_LAB3_FIGURES_TRIANGLE_H
 #include "point.h"
 
 class Triangle{
@@ -7,10 +9,11 @@ private:
     Point c; 
 public:
     Triangle(Point a, Point b, Point c);
-    Triangle(Triangle &other);
+    Triangle(const Triangle &other);
     bool equals(Triangle &other);
     void flip();
     void move(double x, double y);
     double getSurface();
-    std::string toString()
+    std::string toString();
 };
+#endif

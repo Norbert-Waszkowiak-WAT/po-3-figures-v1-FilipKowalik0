@@ -1,6 +1,6 @@
 #include "point.h"
 #include "triangle.h"
-
+#include <cmath>
 Triangle::Triangle(Point a, Point b, Point c)
 :a(a), b(b), c(c){};
 Triangle::Triangle(const Triangle &other)
@@ -18,9 +18,13 @@ void Triangle::move(double x, double y){
     b.move(x, y);
     c.move(x, y);
 }
-doube Triangle::getSurface(){
-
+double Triangle::getSurface(){
+    double a = sqrt(pow(this->b.getX() - this->c.getX(), 2) + pow(this->b.getY() - this->c.getY(), 2));
+    double b = sqrt(pow(this->a.getX() - this->c.getX(), 2) + pow(this->a.getY() - this->c.getY(), 2));
+    double c = sqrt(pow(this->a.getX() - this->b.getX(), 2) + pow(this->a.getY() - this->b.getY(), 2));
+    double p = (a + b + c) / 2;
+    return sqrt(p * (p - a) * (p - b) * (p - c));
 }
-std::String Triangle::toString(){
-    return "Triangle(" + a.toString() + ", " + b.toString() + ", " + c.toString() + ",";
+std::string Triangle::toString(){
+    return "Triangle(" + a.toString() + ", " + b.toString() + ", " + c.toString() + ")";
 }
