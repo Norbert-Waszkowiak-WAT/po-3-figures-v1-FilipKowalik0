@@ -35,25 +35,3 @@ double const Point::getX() {
 double const Point::getY() {
     return y;
 }
-/*#include "point.h"
-#include <sstream>
-#include <iomanip>
-Point::Point(double x, double y): x(x), y(y){}
-
-double Point::getX(){
-    return x;
-}
-
-double Point::getY(){
-    return y;
-}
-
-bool Point::equals(Point &other) {
-    return other.getX() == x && other.getY() == y;
-}
-std::string Point::toString(){
-    std::ostringstream oss;
-    oss << std::fixed << std::setprecision(1);
-    oss << "Point("<<x<<", "<<y<<")";
-    return oss.str();
-}*/

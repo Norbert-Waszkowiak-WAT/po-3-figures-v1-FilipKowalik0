@@ -25,22 +25,3 @@ public:
 
 
 #endif
-/*#ifndef "point.h"
-class Line{
-    private:
-    std::int point_a;
-    std::int point_b;
-    public:
-    Line(point_a,point_b);
-
-    Line( const Line &other);
-
-    bool equals(Line &other);
-
-    void flip();
-
-    void move(double x, double y);
-
-    std::string toString();
-    
-}*/
